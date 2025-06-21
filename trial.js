@@ -77,3 +77,12 @@ const port = process.env.PORT ||3000;
 app.listen(port,()=>{
     console.log(`Serve at http://localhost:${port}`);
 })
+
+//get user detail
+//validate - not empty
+// check if user already exits:email
+//if there are images to upload: then check for imge,upload to cloudinary,create user object
+// create entry in db
+//remove password and refresh token from response
+//check for user creation: null to nahi hua h
+//return res

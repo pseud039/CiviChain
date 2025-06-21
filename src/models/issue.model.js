@@ -6,16 +6,16 @@ const IssueSchema = new mongoose.Schema({
         required:true,
     },
     location:{
-        type:{type:String, default:"Point"},
-        coordinates:[Number],
-        required:true,
+        type:{type:String, default:"Point",required:true},
+        coordinates:{type:[Number],required:true},
+        // required:true,
     },
     description:{
         type:String,
         required:true,
         default:"",
     },
-    image:{
+    IssueImg:{
         type:String,// cloudinary url
         required:true,
     },
@@ -47,11 +47,13 @@ const IssueSchema = new mongoose.Schema({
         required:true,
         default:0,
     },
-    priority:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"AiLog",
-        required:true,
-    },
+    // priority:{
+    //     type:Number,
+    //     required:true,
+    // },predictionConfidence:{
+    //     type:Number,
+    //     required:true,
+    // },
 },{timestamps:true});
 IssueSchema.index({location:"2dsphere"})
 
