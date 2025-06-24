@@ -5,11 +5,13 @@ const IssueSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    location:{
-        type:{type:String, default:"Point",required:true},
-        coordinates:{type:[Number],required:true},
-        // required:true,
-    },
+    // location:{
+    //     type:{type:String, default:"Point",
+    //         required:true
+    //     },
+    //     coordinates:{type:[Number],
+    //         required:true},
+    //     },
     description:{
         type:String,
         required:true,

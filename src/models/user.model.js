@@ -36,10 +36,10 @@ const UserSchema = new mongoose.Schema({
     RefreshToken:{
         type:String,
     },
-    location:{
-        type: { type: String, default:"Point"},
-        coordinates: [Number],
-    },
+    // location:{
+    //     type: { type: String, default:"Point"},
+    //     coordinates: [Number],
+    // },
     role:{
         type:String,
         enum:["citizen","admin"], default:"citizen",
