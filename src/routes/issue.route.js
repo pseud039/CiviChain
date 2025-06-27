@@ -1,14 +1,12 @@
-import { Router } from "express";
-import { Issues } from "../controllers/issue.controller.js";
+import { issues, getAllIssues, getSortedIssues } from "../controllers/issue.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
+import express from "express";
 
-const router = Router()
+const router = express.Router();
+const POST_FIELD= { name: "issueImg", maxCount:1};
 
-router.route("/issues").post(upload.fields([{
-    name:"IssueImg",
-    maxCount:1
-}]),
-Issues)
-
+router.post("/",upload.fields([POST_FIELD]),issues);
+router.get("/",getAllIssues);
+router.get("/find",getSortedIssues);
 
 export default router;
